@@ -1,0 +1,38 @@
+.list{
+    width: fit-content;
+}
+.strike-item{
+    text-decoration: line-through;
+    color: gray;
+    list-style-type: none; /* Remove default bullet */
+    position: relative; /* Position relative for the pseudo-element */
+}
+.strike-item::before {
+    content: "✓"; /* Unicode character for checkmark */
+    color: #1d7c80; /* Change the color of the checkmark */
+    position: absolute; /* Positioning of the checkmark */
+    left: -20px; /* Adjust the position as needed */
+    font-size: 1.2em; /* Change size of the checkmark */
+}
+.remaining-item{
+    list-style-type: none; /* Remove default bullet */
+    position: relative; /* Position relative for the pseudo-element */
+}
+.remaining-item::before {
+    content: "-"; /* Unicode character for checkmark */
+    color: #1d7c80; /* Change the color of the checkmark */
+    position: absolute; /* Positioning of the checkmark */
+    left: -20px; /* Adjust the position as needed */
+    font-size: 1.2em; /* Change size of the checkmark */
+}
+.ul-list{
+    margin-top:0px;
+    margin-bottom:30px;
+}
+.list-item{
+    font: 400 16px 'Varela Round', 'sans-serif';
+    margin: 20px 30px 20px 30px;
+}
+.list-item:hover{
+    cursor: pointer
+}
