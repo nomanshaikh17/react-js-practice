@@ -1,9 +1,17 @@
+import { useState } from 'react'
 import css from './AddItem.module.css'
-const AddItem = ()=>{
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+const AddItem = ({addItem})=>{
+
+    const [inputValue,setInputValue] = useState("");
+
     return (
         <div className={css['outer-div']}>
-            <input type="text" />
-            <button>Add</button>
+            <input type="text" className='' onChange={(e)=>{setInputValue(e.target.value)}}/>
+            <button onClick={()=>{
+                addItem(inputValue)
+            }}><FontAwesomeIcon icon={faArrowRight} /></button>
         </div>
     )
 }

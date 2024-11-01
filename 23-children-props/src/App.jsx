@@ -6,18 +6,20 @@ import React, { useState } from 'react';
 import './App.css'
 
 function App() {
-  const [list, setList] = useState([{
-    name: 'Bread',
-    status: 0
-  },
-  {
-    name: 'Cheese',
-    status: 1
-  },
-  {
-    name: 'Cofee',
-    status: 1
-  }]);
+  const [list, setList] = useState([]
+  //   [{
+  //   name: 'Bread',
+  //   status: 0
+  // },
+  // {
+  //   name: 'Cheese',
+  //   status: 1
+  // },
+  // {
+  //   name: 'Cofee',
+  //   status: 1
+  // }]
+);
 
   function purchase(name, cl, strikeclass,index) {
     const listItem = document.querySelector('.' + cl);
@@ -30,12 +32,20 @@ function App() {
     }
     setList(newList)
   }
+  function addItem(value){
+    let newItem = {
+      name: value,
+      status: 1
+    }
+    const newList = [...list,newItem]
+    setList(newList)
+  }
   return (
     <center>
 
       <Conatiner>
         {/* <Heading/> */}
-        <AddItem></AddItem>
+        <AddItem addItem={addItem}></AddItem>
         <List list={list} purchase={purchase} />
       </Conatiner>
     </center>
