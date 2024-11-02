@@ -1,0 +1,12 @@
+.display-div{
+    /* text-align: center; */
+    margin:0px 10px 10px 0px;
+    /* width: 100%; */
+  }
+  .input-field {
+    border: black 3px solid;
+    height: 40px;
+    width: 100%;
+    text-align: end;
+    /* margin-right: 10px; */
+  }

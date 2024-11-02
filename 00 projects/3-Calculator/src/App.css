@@ -1,0 +1,12 @@
+.main-container{
+  width: 40%;
+  position: absolute;
+  top: 140px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: black 1px solid;
+  padding: 10px;
+  background-color: #efefef;
+}
+
