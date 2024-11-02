@@ -8,8 +8,15 @@ const AddItem = ({addItem})=>{
 
     return (
         <div className={css['outer-div']}>
-            <input type="text" className='' onChange={(e)=>{setInputValue(e.target.value)}}/>
+            <input type="text" className='' value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}
+            onKeyDown={(e)=>{
+                if(e.key==='Enter'){
+                    addItem(inputValue)
+                    setInputValue("")
+                }
+            }}/>
             <button onClick={()=>{
+                setInputValue("")
                 addItem(inputValue)
             }}><FontAwesomeIcon icon={faArrowRight} /></button>
         </div>
