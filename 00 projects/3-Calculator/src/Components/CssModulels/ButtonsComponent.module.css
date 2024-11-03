@@ -7,4 +7,9 @@
     width:24%;
     height:55px;
     background-color: white;
+    font-size: larger;
+  }
+  .equal-button{
+    background: #1975c6;
+    color: white;
   }
