@@ -1,16 +1,28 @@
+import { useState } from "react";
 import AppHeading from "./componenets/AppHeading";
 import AddItem from "./componenets/AddItem";
-import Item1 from "./componenets/Item1";
-import Item2 from "./componenets/Item2";
-import "./App.css"
+import Items from "./componenets/Items";
+import "./App.css";
 function App() {
-  return <center>
-    <AppHeading/>
-    <AddItem/>
-    <Item1/>
-    <Item2/>
-  </center>;
+  const [items, setItems] = useState([
+    { name: "Fruit", date: "10/6/24" },
+    { name: "Vegitable", date: "10/6/24" },
+  ]);
+  const addItem = (itemName, itemDate) => {
+    const newList = [...items, { name: itemName, date: itemDate }];
+    setItems(newList);
+  };
+  const deleteItem = (index)=>{
+    const newList =[...items.slice(0,index),...items.slice(index+1)]
+    setItems(newList);
+  }
+  return (
+    <center>
+      <AppHeading />
+      <AddItem addItemValue={addItem} />
+      <Items listItems={items} removeItem={deleteItem}></Items>
+    </center>
+  );
 }
 
 export default App;
- 
