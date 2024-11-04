@@ -1,6 +1,5 @@
 import { MdDelete } from "react-icons/md";
 const Items = ({listItems,removeItem}) => {
-  console.log(listItems);
   return listItems.map((item,key) => {
     return (
       <div className="container item-container" key={key}>
