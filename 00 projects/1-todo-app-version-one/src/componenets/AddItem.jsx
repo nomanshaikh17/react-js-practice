@@ -1,21 +1,15 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { IoAddCircleSharp } from "react-icons/io5";
 function AddItem({ handleFormSubmit }) {
-  const [itemValue, setItemValue] = useState("");
-  const [dateValue, setDateValue] = useState("");
 
-  const changeItemValue = (e) => {
-    setItemValue(e.target.value);
-  };
+  const itemElement = useRef();
+  const dateElement = useRef();
 
-  const changeDateValue = (e) => {
-    setDateValue(e.target.value);
-  };
   
   const submitForm = (e)=>{
-    handleFormSubmit(e,itemValue,dateValue);
-    setItemValue("");
-    setDateValue("");
+    handleFormSubmit(e,itemElement.current.value,dateElement.current.value);
+    itemElement.current.value="";
+    dateElement.current.value="";
   }
 
   return (
@@ -26,19 +20,13 @@ function AddItem({ handleFormSubmit }) {
           <input
             type="text"
             placeholder="Enter Item"
-            value={itemValue}
-            onChange={(e) => {
-              changeItemValue(e);
-            }}
+            ref={itemElement}
           />
         </div>
         <div className="col-4">
           <input
             type="date"
-            value={dateValue}
-            onChange={(e) => {
-              changeDateValue(e);
-            }}
+            ref={dateElement}
           />
         </div>
         <div className="col-2">
