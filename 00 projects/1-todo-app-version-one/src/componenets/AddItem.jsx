@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IoAddCircleSharp } from "react-icons/io5";
-function AddItem({ addItemValue }) {
+function AddItem({ handleFormSubmit }) {
   const [itemValue, setItemValue] = useState("");
   const [dateValue, setDateValue] = useState("");
 
@@ -11,9 +11,16 @@ function AddItem({ addItemValue }) {
   const changeDateValue = (e) => {
     setDateValue(e.target.value);
   };
+  
+  const submitForm = (e)=>{
+    handleFormSubmit(e,itemValue,dateValue);
+    setItemValue("");
+    setDateValue("");
+  }
 
   return (
     <div className="container text-center item-container">
+      <form action="" onSubmit={submitForm}>
       <div className="row">
         <div className="col-6">
           <input
@@ -35,18 +42,12 @@ function AddItem({ addItemValue }) {
           />
         </div>
         <div className="col-2">
-          <button
-            className="btn btn-success my-btn"
-            onClick={(e) => {
-              addItemValue(itemValue, dateValue);
-              setItemValue("");
-              setDateValue("");
-            }}
-          >
+          <button className="btn btn-success my-btn">
             <IoAddCircleSharp />
           </button>
         </div>
       </div>
+      </form>
     </div>
   );
 }

@@ -12,6 +12,13 @@ function App() {
     const newList = [...items, { name: itemName, date: itemDate }];
     setItems(newList);
   };
+  const handleFormSubmit = (e,itemName,itemDate)=>{
+    e.preventDefault();
+    console.log(itemName);
+    console.log(itemDate);
+    const newList = [...items, { name: itemName, date: itemDate }];
+    setItems(newList);
+  }
   const deleteItem = (index)=>{
     const newList =[...items.slice(0,index),...items.slice(index+1)]
     setItems(newList);
@@ -19,7 +26,7 @@ function App() {
   return (
     <center>
       <AppHeading />
-      <AddItem addItemValue={addItem} />
+      <AddItem handleFormSubmit={handleFormSubmit} />
       <Items listItems={items} removeItem={deleteItem}></Items>
     </center>
   );
