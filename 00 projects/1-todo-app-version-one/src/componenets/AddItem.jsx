@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { IoAddCircleSharp } from "react-icons/io5";
 function AddItem({ addItemValue }) {
   const [itemValue, setItemValue] = useState("");
   const [dateValue, setDateValue] = useState("");
@@ -43,7 +43,7 @@ function AddItem({ addItemValue }) {
               setDateValue("");
             }}
           >
-            Add
+            <IoAddCircleSharp />
           </button>
         </div>
       </div>
