@@ -3,7 +3,11 @@
     display: inline;
 }
 .do{
-    color: blueviolet;
+    color: #805cf6;
     display: inline;
 
+}
+.header-div{
+    font-size: 100px;
+    font-family: 'circular';
 }

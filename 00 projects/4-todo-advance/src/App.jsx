@@ -1,5 +1,5 @@
 import './App.css'
-import HeadingComponent from './componenets/HeadingComponent'
+import HeadingComponent from './components/HeadingComponent'
 
 function App() {
 

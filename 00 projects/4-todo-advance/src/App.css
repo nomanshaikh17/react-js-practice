@@ -1,4 +1,7 @@
 body{
-  background-color: black;
+  background-color: #121214;
   padding: 40px;
+}
+#root{
+  padding: 22px 120px;
 }
