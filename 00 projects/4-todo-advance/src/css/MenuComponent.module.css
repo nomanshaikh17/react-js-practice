@@ -1,0 +1,21 @@
+.menu-container {
+    flex: 1;
+    background-color: #18181c;
+    border-radius: 20px;
+}
+.left-inner-container{
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+.filter-item{
+    margin: 10px;
+    padding: 0px 8px;
+}
+
+.selected.filter-item{
+    background-color: rgb(47, 45, 54);
+    color:#84849d;
+    padding: 8px;
+    border-radius: 12px;
+}

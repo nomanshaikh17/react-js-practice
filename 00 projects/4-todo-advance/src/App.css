@@ -1,7 +1,24 @@
-body{
+body {
   background-color: #121214;
-  padding: 40px;
+  padding: 20px 20px;
+  font-family: 'circular';
 }
-#root{
-  padding: 22px 120px;
+
+#root {
+  padding:65px 450px;;
 }
+
+/* mid container css start*/
+
+.mid-container {
+  display: flex;
+  gap: 30px;
+  color: white;
+}
+
+.left-container {
+  flex: 2;
+  background-color: #18181c;
+}
+
+/* mid container css end */

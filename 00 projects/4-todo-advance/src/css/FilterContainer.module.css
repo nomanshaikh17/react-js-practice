@@ -1,0 +1,12 @@
+.filter-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+.text {
+  color: #8d8fd2;
+  flex: 10;
+  font-size: x-large;
+}
+.toogle {
+  flex: 1;
+}

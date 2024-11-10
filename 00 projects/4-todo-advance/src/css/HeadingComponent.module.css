@@ -3,11 +3,12 @@
     display: inline;
 }
 .do{
-    color: #805cf6;
+    color: rgb(125, 90, 242);
     display: inline;
 
 }
 .header-div{
-    font-size: 100px;
-    font-family: 'circular';
+    font-size: 50px;
+
+    margin-bottom: 40px
 }

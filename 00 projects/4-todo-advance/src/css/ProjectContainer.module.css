@@ -1,0 +1,33 @@
+.projects-container{
+    margin-top:20px
+}
+
+.project-heading{
+    display: flex;
+}
+.text{
+    color: #8d8fd2;
+    flex: 10;
+    font-size: x-large;
+}
+
+.add-icon{
+    flex: 1;
+    color: rgb(47, 45, 54);
+    font-size: 25px;
+}
+
+.add-icon:hover{
+    color: #8d8fd2;
+}
+
+.project-item{
+    margin: 10px;
+    padding: 0px 8px
+}
+.selected.project-item{
+    background-color: rgb(47, 45, 54);
+    color:#84849d;
+    padding: 8px;
+    border-radius: 12px;
+}
