@@ -25,6 +25,14 @@
     margin: 10px;
     padding: 0px 8px
 }
+
+.project-item > svg{
+    margin-top: 2px;
+}
+
+.project-item >span{
+    margin-left: 10px;
+}
 .selected.project-item{
     background-color: rgb(47, 45, 54);
     color:#84849d;

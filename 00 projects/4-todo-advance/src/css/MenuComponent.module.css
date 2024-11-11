@@ -13,6 +13,14 @@
     padding: 0px 8px;
 }
 
+.filter-item > span {
+    margin-left: 10px;
+}
+
+.filter-item > svg {
+    margin-top: 2px;
+}
+
 .selected.filter-item{
     background-color: rgb(47, 45, 54);
     color:#84849d;

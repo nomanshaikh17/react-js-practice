@@ -13,11 +13,11 @@ const ProjectContainer = () => {
       </div>
       <div className={`${css["project-item"]} ${css["selected"]}`}>
         <FaRegFolder />
-        Test
+        <span>Test</span>
       </div>
       <div className={css["project-item"]}>
         <FaRegFolder />
-        Default
+        <span>Default</span>
       </div>
     </div>
   );

@@ -13,19 +13,19 @@ const MenuComponent = () => {
         <FilterContainer />
         <div className={`${css["filter-item"]} ${css["selected"]}`}>
           <RiGalleryView2 />
-          All
+           <span>All</span>
         </div>
         <div className={css["filter-item"]}>
           <FaStar />
-          Starred
+          <span>Starred</span>
         </div>
         <div className={css["filter-item"]}>
           <IoTodayOutline />
-          Today
+          <span>Today</span>
         </div>
         <div className={css["filter-item"]}>
           <BsCalendar4Week />
-          Week
+          <span>Week</span>
         </div>
         <ProjectContainer />
       </div>
