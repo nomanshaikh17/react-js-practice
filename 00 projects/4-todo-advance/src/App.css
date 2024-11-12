@@ -5,7 +5,7 @@ body {
 }
 
 #root {
-  padding:65px 450px;;
+  padding:30px 290px;
 }
 
 /* mid container css start*/
@@ -16,9 +16,6 @@ body {
   color: white;
 }
 
-.left-container {
-  flex: 2;
-  background-color: #18181c;
-}
+
 
 /* mid container css end */

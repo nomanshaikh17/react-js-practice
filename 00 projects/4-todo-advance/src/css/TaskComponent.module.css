@@ -1,0 +1,42 @@
+.task-main-container {
+  flex: 2;
+  background-color: #18181c;
+  border-radius: 20px;
+}
+.inner-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.task-list-main-div {
+  flex: 5;
+}
+.bottom-container {
+  flex: 1;
+  margin-bottom: 10px;
+}
+.heading {
+  color: #8d8fd2;
+  flex: 10;
+  font-size: x-large;
+  margin-bottom: 10px;
+}
+.add-button{
+  float: right;
+  background: linear-gradient(160deg, rgb(145, 114, 247) 0%, rgb(104, 61, 247) 100%);
+  color: white;
+  border-radius: 10px;
+  width: 120px;
+  height: 45px;
+  margin-right: 10px;
+  border-style: solid;
+  font-size: 20px;
+}
+.task{
+  background-color: rgb(47, 45, 54);
+  color: white;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+}
