@@ -2,6 +2,7 @@ import './App.css'
 import HeadingComponent from './components/HeadingComponent'
 import MenuComponent from './components/MenuComponent'
 import TaskComponent from './components/TaskComponent'
+import TaskForm from './components/TaskForm'
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
       <HeadingComponent/>
       <div className="mid-container">
           <MenuComponent/>
-          <TaskComponent/>
+          {/* <TaskComponent/> */}
+          <TaskForm/>
       </div>
     </>
   )
