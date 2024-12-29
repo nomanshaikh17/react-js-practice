@@ -27,22 +27,87 @@
 .bottom-fields {
   display: flex;
   flex-wrap: wrap;
+  gap: 12px;
 }
-.notes-fields {
-  flex: 4;
+.project-fields {
+  flex: 13;
 }
 .select-dropdown {
-    padding: 8px;
+  margin-top: 1em;
+  height: 50px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: rgb(47, 45, 54);
+  color: white;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.select-dropdown:focus {
+  outline: none;
+  border: none;
 }
 .date-fields {
-  flex: 4;
+  flex: 13;
 }
 .input-date {
+  margin-top: 1em;
+  height: 35px;
   border-radius: 8px;
   padding: 8px;
+  border-radius: 10px;
+  background-color: rgb(47, 45, 54);
+  color: white;
+  border: none;
+  width: 100%;
+}
+.input-date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.input-date:focus {
+  outline: none;
+  border: none;
 }
 .star-field {
   flex: 1;
+  position: relative;
+}
+.star-field > span {
+  position: absolute;
+  left: 50%;
+  top: 60%;
 }
 .form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.bottom-control{
+  display:flex
+}
+.back-button{
+  flex: 1;
+}
+.back-button > svg{
+  height: 45px;
+  width: 45px;
+}
+.add-btn{
+  flex: 1;
+}
+button{
+  float: right;
+  background: linear-gradient(
+    160deg,
+    rgb(145, 114, 247) 0%,
+    rgb(104, 61, 247) 100%
+  );
+  color: white;
+  border-radius: 10px;
+  width: 120px;
+  height: 45px;
+  margin-right: 10px;
+  border-style: solid;
+  font-size: 20px;
 }

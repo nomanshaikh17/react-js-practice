@@ -2,7 +2,7 @@ import css from "../css/TaskForm.module.css";
 import { FaStar } from "react-icons/fa6";
 import { IoChevronBack } from "react-icons/io5";
 
-const TaskForm = () => {
+const TaskForm = ({showForm}) => {
   return (
     <div className={css["task-form-container"]}>
       <div className={css["form"]}>
@@ -18,8 +18,8 @@ const TaskForm = () => {
           ></textarea>
         </div>
         <div className={css["bottom-fields"]}>
-          <div className={css["notes-fields"]}>
-            <div className={css["heading"]}>Note</div>
+          <div className={css["project-fields"]}>
+            <div className={css["heading"]}>Project</div>
             <select className={css["select-dropdown"]}>
               <option value=""></option>
               <option value="">Test</option>
@@ -36,9 +36,13 @@ const TaskForm = () => {
             </span>
           </div>
         </div>
-        <div>
-            <div className={css['back-button']}><IoChevronBack/></div>
-            <div className={css['add-btn']}><button>Add</button></div>
+        <div className={css['bottom-control']}>
+          <div className={css["back-button"]} onClick={()=>showForm(0)}>
+            <IoChevronBack />
+          </div>
+          <div className={css["add-btn"]}>
+            <button>Add</button>
+          </div>
         </div>
       </div>
     </div>

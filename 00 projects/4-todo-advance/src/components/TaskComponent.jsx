@@ -1,29 +1,21 @@
 import css from "../css/TaskComponent.module.css";
-import { FaStar } from "react-icons/fa6";
-import { RiDeleteBinLine } from "react-icons/ri";
+import SingleTaskComponent from "./SingleTaskComponent";
 
 
-const TaskComponent = () => {
+const TaskComponent = ({showForm,projects,selectedProject,selectedFilter,tasks,updateTaskStatus,updateTaskFavorite}) => {
   return (
     <div className={css["task-main-container"]}>
       <div className={css["inner-container"]}>
         <div className={css["task-list-main-div"]}>
           <div className={css["heading"]}>Tasks</div>
           <div className="task-list-div">
-            <div className={css["task"]}>
-              <div className={css["round"]}>
-                <input type="checkbox" checked onChange={()=>{}} />
-                <label htmlFor="checkbox"></label>
-              </div>
-              <span className={css["task-text"]}>Task 1</span>
-              <span className={css["task-star"]}><FaStar /></span>
-              <span className={css["task-bin"]}><RiDeleteBinLine />
-              </span>
-            </div>
+            <SingleTaskComponent selectedFilter={selectedFilter} selectedProject={selectedProject} tasks={tasks} updateTaskStatus={updateTaskStatus} updateTaskFavorite={updateTaskFavorite}/>
           </div>
         </div>
         <div className={css["bottom-container"]}>
-          <button className={css["add-button"]}>Add</button>
+          <button className={css["add-button"]} onClick={()=>{
+            showForm(1);
+          }}>Add</button>
         </div>
       </div>
     </div>

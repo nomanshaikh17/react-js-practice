@@ -2,7 +2,9 @@ import css from "../css/ProjectContainer.module.css";
 import { IoMdAdd } from "react-icons/io";
 import { FaRegFolder } from "react-icons/fa6";
 
-const ProjectContainer = () => {
+const ProjectContainer = ({ projects,changeProject,selectedProject }) => {
+
+
   return (
     <div className={css["projects-container"]}>
       <div className={css["project-heading"]}>
@@ -11,14 +13,18 @@ const ProjectContainer = () => {
           <IoMdAdd />
         </div>
       </div>
-      <div className={`${css["project-item"]} ${css["selected"]}`}>
+      {/* <div className={`${css["project-item"]} ${css["selected"]}`}>
         <FaRegFolder />
         <span>Test</span>
-      </div>
-      <div className={css["project-item"]}>
-        <FaRegFolder />
-        <span>Default</span>
-      </div>
+      </div> */}
+      {projects.map((project,key) => (
+        <div key={key} className={`${css["project-item"]} ${selectedProject==project.id ? css["selected"]: ''}`} onClick={()=>{
+          changeProject(project.id);
+        }}>
+          <FaRegFolder />
+          <span>{project.name}</span>
+        </div>
+      ))}
     </div>
   );
 };
