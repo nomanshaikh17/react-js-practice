@@ -7,16 +7,17 @@ import TaskForm from "./components/TaskForm";
 
 function App() {
   const projects = [
-    { id: 1, name: "default" },
-    { id: 2, name: "test" },
+    { id: 1, name: "all" },
+    { id: 2, name: "default" },
+    { id: 3, name: "test" },
   ];
   
   const [showForm, setshowForm] = useState(0);
   const [selectedProject, setSelectedProject] = useState(1);
   const [selectedFilter, setSelectedfilter] = useState("all");
   const [tasks, updateTasks] = useState([
-    { id: 1, name: "Task 1", note: "task 1 note", project: 1, completed: 0,favorite:1 },
-    { id: 2, name: "Task 2", note: "task 2 note", project: 1, completed: 1,favorite:1 },
+    { id: 1, name: "Task 1", note: "task 1 note", project: 3, completed: 0,favorite:1 },
+    { id: 2, name: "Task 2", note: "task 2 note", project: 3, completed: 1,favorite:1 },
     { id: 3, name: "Task 3", note: "task 3 note", project: 2, completed: 1,favorite:0 },
     { id: 4, name: "Task 4", note: "task 4 note", project: 2, completed: 0,favorite:1 },
   ]);
