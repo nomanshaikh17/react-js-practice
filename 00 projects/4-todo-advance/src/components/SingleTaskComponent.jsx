@@ -6,6 +6,7 @@ const SingleTaskComponent = ({
   task,
   updateTaskStatus,
   updateTaskFavorite,
+  deleteTask
 }) => {
   return (
     <>
@@ -41,7 +42,7 @@ const SingleTaskComponent = ({
           <FaStar />
         </span>
         <span className={css["task-bin"]}>
-          <RiDeleteBinLine />
+          <RiDeleteBinLine onClick={()=>{deleteTask(task.id)}}/>
         </span>
       </div>
     </>

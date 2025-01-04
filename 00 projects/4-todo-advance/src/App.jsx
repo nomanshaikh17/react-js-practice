@@ -36,8 +36,11 @@ function App() {
   }
 
   function updateTaskFavorite(taskId,favorite){
-    console.log("update")
     updateTasks(tasks.map((task)=>(taskId==task.id ? {...task,favorite:favorite} : task)));
+  }
+
+  function deleteTask(taskId){
+    updateTasks(tasks.filter((task)=>task.id!=taskId));
   }
   return (
     <>
@@ -61,6 +64,7 @@ function App() {
             tasks={tasks}
             updateTaskStatus={updateTaskStatus}
             updateTaskFavorite={updateTaskFavorite}
+            deleteTask={deleteTask}
           />
         )}
       </div>

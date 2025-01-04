@@ -9,6 +9,7 @@ const TaskComponent = ({
   tasks,
   updateTaskStatus,
   updateTaskFavorite,
+  deleteTask
 }) => {
   // Helper function to filter tasks based on conditions
   const filterTasks = (task) => {
@@ -41,6 +42,7 @@ const TaskComponent = ({
                   updateTaskStatus={updateTaskStatus}
                   updateTaskFavorite={updateTaskFavorite}
                   key={key}
+                  deleteTask={deleteTask}
                 />
               ))}
           </div>
