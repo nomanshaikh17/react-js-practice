@@ -13,6 +13,7 @@
 }
 .task > .task-star {
   flex: 1;
+  cursor: pointer;
 }
 .task > .favorite{
     color : #8d8fd2;
@@ -20,6 +21,7 @@
 }
 .task > .task-bin {
   flex: 1;
+  cursor: pointer;
 }
 .round {
   flex: 1;

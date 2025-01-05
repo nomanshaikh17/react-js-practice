@@ -16,6 +16,11 @@ body {
   color: white;
 }
 
+.error-text{
+  color: red;
+  font-size: small;
+}
+
 
 
 /* mid container css end */

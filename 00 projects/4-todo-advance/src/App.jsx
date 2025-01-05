@@ -11,36 +11,54 @@ function App() {
     { id: 2, name: "default" },
     { id: 3, name: "test" },
   ];
-  
+
   const [showForm, setshowForm] = useState(0);
   const [selectedProject, setSelectedProject] = useState(1);
   const [selectedFilter, setSelectedfilter] = useState("all");
+  const [nextTaskId, setNextTaskId] = useState(1);
   const [tasks, updateTasks] = useState([
-    { id: 1, name: "Task 1", note: "task 1 note", project: 3, completed: 0,favorite:1 },
-    { id: 2, name: "Task 2", note: "task 2 note", project: 3, completed: 1,favorite:1 },
-    { id: 3, name: "Task 3", note: "task 3 note", project: 2, completed: 1,favorite:0 },
-    { id: 4, name: "Task 4", note: "task 4 note", project: 2, completed: 0,favorite:1 },
+    // { id: 1, name: "Task 1", note: "task 1 note", project: 3, completed: 0,favorite:1 },
+    // { id: 2, name: "Task 2", note: "task 2 note", project: 3, completed: 1,favorite:1 },
+    // { id: 3, name: "Task 3", note: "task 3 note", project: 2, completed: 1,favorite:0 },
+    // { id: 4, name: "Task 4", note: "task 4 note", project: 2, completed: 0,favorite:1 },
   ]);
   function changeFormDisplay(value) {
     setshowForm(value);
   }
+
   function changeProject(value) {
     setSelectedProject(value);
+    console.log(value);
+    console.log(tasks);
   }
+
   function changeFilter(value) {
     setSelectedfilter(value);
   }
 
-  function updateTaskStatus(taskId,status){
-    updateTasks(tasks.map((task)=>(taskId==task.id ? {...task,completed:status} : task)));
+  function addTask(task) {
+    updateTasks([...tasks, task]);
+    setNextTaskId(nextTaskId + 1);
   }
 
-  function updateTaskFavorite(taskId,favorite){
-    updateTasks(tasks.map((task)=>(taskId==task.id ? {...task,favorite:favorite} : task)));
+  function updateTaskStatus(taskId, status) {
+    updateTasks(
+      tasks.map((task) =>
+        taskId === task.id ? { ...task, completed: status } : task
+      )
+    );
   }
 
-  function deleteTask(taskId){
-    updateTasks(tasks.filter((task)=>task.id!=taskId));
+  function updateTaskFavorite(taskId, favorite) {
+    updateTasks(
+      tasks.map((task) =>
+        taskId === task.id ? { ...task, favorite: favorite } : task
+      )
+    );
+  }
+
+  function deleteTask(taskId) {
+    updateTasks(tasks.filter((task) => task.id !== taskId));
   }
   return (
     <>
@@ -54,7 +72,12 @@ function App() {
           selectedFilter={selectedFilter}
         />
         {showForm ? (
-          <TaskForm showForm={changeFormDisplay} />
+          <TaskForm
+            showForm={changeFormDisplay}
+            projects={projects}
+            addTask={addTask}
+            nextTaskId={nextTaskId}
+          />
         ) : (
           <TaskComponent
             showForm={changeFormDisplay}

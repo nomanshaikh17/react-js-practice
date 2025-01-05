@@ -24,6 +24,12 @@
   outline: none;
   border: none;
 }
+
+textarea.text-field {
+  height: 100px; /* Adjust the height as needed */
+  padding-top: 10px;
+}
+
 .bottom-fields {
   display: flex;
   flex-wrap: wrap;
@@ -83,20 +89,21 @@
   flex-direction: column;
   gap: 20px;
 }
-.bottom-control{
-  display:flex
+.bottom-control {
+  display: flex;
 }
-.back-button{
+.back-button {
   flex: 1;
 }
-.back-button > svg{
+.back-button > svg {
   height: 45px;
   width: 45px;
+  cursor: pointer;
 }
-.add-btn{
+.add-btn {
   flex: 1;
 }
-button{
+button {
   float: right;
   background: linear-gradient(
     160deg,
@@ -110,4 +117,9 @@ button{
   margin-right: 10px;
   border-style: solid;
   font-size: 20px;
+  cursor: pointer;
+}
+.favorite{
+  color : #8d8fd2;
+
 }

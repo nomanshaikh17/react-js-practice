@@ -9,10 +9,26 @@ const TaskComponent = ({
   tasks,
   updateTaskStatus,
   updateTaskFavorite,
-  deleteTask
+  deleteTask,
 }) => {
   // Helper function to filter tasks based on conditions
   const filterTasks = (task) => {
+    const currentDate = new Date();
+    const taskDate = new Date(task.date);
+
+    const isSameWeek = (date1, date2) => {
+      const startOfWeek = (date) => {
+        const day = date.getDay();
+        const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+        return new Date(date.setDate(diff));
+      };
+
+      const startOfCurrentWeek = startOfWeek(new Date(date1));
+      const startOfTaskWeek = startOfWeek(new Date(date2));
+
+      return startOfCurrentWeek.toDateString() === startOfTaskWeek.toDateString();
+    };
+
     if (selectedFilter === "all") {
       if (selectedProject === 1 || task.project === selectedProject) {
         return true;
@@ -24,7 +40,22 @@ const TaskComponent = ({
       ) {
         return true;
       }
+    } else if (selectedFilter === "today") {
+      if (
+        taskDate.toDateString() === currentDate.toDateString() &&
+        (selectedProject === 1 || task.project === selectedProject)
+      ) {
+        return true;
+      }
+    } else if (selectedFilter === "week") {
+      if (
+        isSameWeek(taskDate, currentDate) &&
+        (selectedProject === 1 || task.project === selectedProject)
+      ) {
+        return true;
+      }
     }
+    
     return false;
   };
 
@@ -48,10 +79,7 @@ const TaskComponent = ({
           </div>
         </div>
         <div className={css["bottom-container"]}>
-          <button
-            className={css["add-button"]}
-            onClick={() => showForm(1)}
-          >
+          <button className={css["add-button"]} onClick={() => showForm(1)}>
             Add
           </button>
         </div>
