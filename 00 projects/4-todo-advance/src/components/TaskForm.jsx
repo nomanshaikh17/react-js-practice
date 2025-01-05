@@ -1,9 +1,12 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import css from "../css/TaskForm.module.css";
 import { FaStar } from "react-icons/fa6";
 import { IoChevronBack } from "react-icons/io5";
+import AppContext from "../store/AppContext";
 
-const TaskForm = ({ showForm, projects, addTask, nextTaskId }) => {
+const TaskForm = ({ showForm, addTask, nextTaskId }) => {
+
+  const {projects} = useContext(AppContext);
   const taskHeading = useRef("");
   const taskDescrption = useRef("");
   const taskProject = useRef();

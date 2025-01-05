@@ -1,9 +1,13 @@
 import css from "../css/ProjectContainer.module.css";
 import { IoMdAdd } from "react-icons/io";
 import { FaRegFolder } from "react-icons/fa6";
+import { useContext } from "react";
+import AppContext from "../store/AppContext";
 
-const ProjectContainer = ({ projects,changeProject,selectedProject }) => {
 
+const ProjectContainer = ({ changeProject }) => {
+
+  const {projects,selectedProject} = useContext(AppContext);
 
   return (
     <div className={css["projects-container"]}>

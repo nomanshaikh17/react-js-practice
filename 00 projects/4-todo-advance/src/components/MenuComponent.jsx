@@ -5,14 +5,14 @@ import { RiGalleryView2 } from "react-icons/ri";
 import { FaStar } from "react-icons/fa6";
 import { IoTodayOutline } from "react-icons/io5";
 import { BsCalendar4Week } from "react-icons/bs";
+import { useContext } from "react";
+import AppContext from "../store/AppContext";
 
 const MenuComponent = ({
-  projects,
   changeProject,
-  selectedProject,
   changeFilter,
-  selectedFilter,
 }) => {
+  const  {selectedFilter} = useContext(AppContext);
   return (
     <div className={css["menu-container"]}>
       <div className={css["left-inner-container"]}>
@@ -62,9 +62,7 @@ const MenuComponent = ({
           <span>Week</span>
         </div>
         <ProjectContainer
-          projects={projects}
           changeProject={changeProject}
-          selectedProject={selectedProject}
         />
       </div>
     </div>

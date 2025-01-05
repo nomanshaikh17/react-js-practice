@@ -1,16 +1,17 @@
+import { useContext } from "react";
 import css from "../css/TaskComponent.module.css";
 import SingleTaskComponent from "./SingleTaskComponent";
+import AppContext from "../store/AppContext";
 
 const TaskComponent = ({
   showForm,
-  projects,
-  selectedProject,
-  selectedFilter,
   tasks,
   updateTaskStatus,
   updateTaskFavorite,
   deleteTask,
 }) => {
+  const { selectedProject, selectedFilter } = useContext(AppContext);
+
   // Helper function to filter tasks based on conditions
   const filterTasks = (task) => {
     const currentDate = new Date();
@@ -26,7 +27,9 @@ const TaskComponent = ({
       const startOfCurrentWeek = startOfWeek(new Date(date1));
       const startOfTaskWeek = startOfWeek(new Date(date2));
 
-      return startOfCurrentWeek.toDateString() === startOfTaskWeek.toDateString();
+      return (
+        startOfCurrentWeek.toDateString() === startOfTaskWeek.toDateString()
+      );
     };
 
     if (selectedFilter === "all") {
@@ -55,7 +58,7 @@ const TaskComponent = ({
         return true;
       }
     }
-    
+
     return false;
   };
 

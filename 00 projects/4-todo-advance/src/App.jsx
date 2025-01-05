@@ -4,6 +4,7 @@ import HeadingComponent from "./components/HeadingComponent";
 import MenuComponent from "./components/MenuComponent";
 import TaskComponent from "./components/TaskComponent";
 import TaskForm from "./components/TaskForm";
+import AppContext from "./store/AppContext";
 
 function App() {
   const projects = [
@@ -14,7 +15,7 @@ function App() {
 
   const [showForm, setshowForm] = useState(0);
   const [selectedProject, setSelectedProject] = useState(1);
-  const [selectedFilter, setSelectedfilter] = useState("all");
+  const [selectedFilter, setSelectedFilter] = useState("all");
   const [nextTaskId, setNextTaskId] = useState(1);
   const [tasks, updateTasks] = useState([
     // { id: 1, name: "Task 1", note: "task 1 note", project: 3, completed: 0,favorite:1 },
@@ -33,7 +34,7 @@ function App() {
   }
 
   function changeFilter(value) {
-    setSelectedfilter(value);
+    setSelectedFilter(value);
   }
 
   function addTask(task) {
@@ -63,34 +64,35 @@ function App() {
   return (
     <>
       <HeadingComponent />
-      <div className="mid-container">
-        <MenuComponent
-          projects={projects}
-          changeProject={changeProject}
-          selectedProject={selectedProject}
-          changeFilter={changeFilter}
-          selectedFilter={selectedFilter}
-        />
-        {showForm ? (
-          <TaskForm
-            showForm={changeFormDisplay}
-            projects={projects}
-            addTask={addTask}
-            nextTaskId={nextTaskId}
+      <AppContext.Provider
+        value={{
+          projects: projects,
+          selectedProject: selectedProject,
+          selectedFilter: selectedFilter,
+        }}
+      >
+        <div className="mid-container">
+          <MenuComponent
+            changeProject={changeProject}
+            changeFilter={changeFilter}
           />
-        ) : (
-          <TaskComponent
-            showForm={changeFormDisplay}
-            projects={projects}
-            selectedProject={selectedProject}
-            selectedFilter={selectedFilter}
-            tasks={tasks}
-            updateTaskStatus={updateTaskStatus}
-            updateTaskFavorite={updateTaskFavorite}
-            deleteTask={deleteTask}
-          />
-        )}
-      </div>
+          {showForm ? (
+            <TaskForm
+              showForm={changeFormDisplay}
+              addTask={addTask}
+              nextTaskId={nextTaskId}
+            />
+          ) : (
+            <TaskComponent
+              showForm={changeFormDisplay}
+              tasks={tasks}
+              updateTaskStatus={updateTaskStatus}
+              updateTaskFavorite={updateTaskFavorite}
+              deleteTask={deleteTask}
+            />
+          )}
+        </div>
+      </AppContext.Provider>
     </>
   );
 }
